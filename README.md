@@ -33,4 +33,4 @@ Plug in your ElbertV2 if it isn't already, and select the proper COM port in the
 If everything is hooked up correctly, you should see something like this on your display.
 ![Testing the project](https://i.imgur.com/8SizvzJ.jpg)
 
-Try playing with the VGA RGB signal wires in the _VGA_Display_Example_ module to produce new images on the screen.
+Read the code and comments for an explanation on how it works. Try playing with the VGA RGB signal wires in the _VGA_Display_Example_ module to produce new images on the screen.
