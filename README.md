@@ -4,6 +4,8 @@ This project is an example of driving a VGA display using the ElbertV2 (Spartan3
 ## Hardware
 While the VGA Display Driver in this project is generic to any FPGA and any resolution/color-depth/etc setup (it merely generates the correct timings and signal pulses based on its inputs), the example module is written specifically for the [ElbertV2 Board from Numato Lab](https://numato.com/product/elbert-v2-spartan-3a-fpga-development-board). However, the example module can easily be adapted to any FPGA hooked up to a VGA display in a similar manner (i.e. 8 signal lines for color information connected to the VGA display via a simple resistor ladder DAC). To do this, the constraints file must be changed to reflect the new pin configuration, and a 100Mhz clock source must be provided to replace the generated 100Mhz clock in the _VGA_Display_Example_ module (provided in the example by _dcm_100.xaw_).
 
+![ElbertV2 Board](https://numato.com/help/wp-content/uploads/2016/03/elbertv2_4__09811.1437703972.1280.1280-e1459217096649.jpg)
+
 Some sort of VGA Display will be needed as well. The examples provided cover 640x480 and 800x600 (60Hz) displays, but in theory any VGA display should be usable if you override the default parameters with the [correct timings](https://www.epanorama.net/faq/vga2rgb/calc.html).
 
 ## Using this project
@@ -27,3 +29,5 @@ Plug in your ElbertV2 if it isn't already, and select the proper COM port in the
 
 If everything is hooked up correctly, you should see something like this on your display.
 ![Testing the project](https://i.imgur.com/8SizvzJ.jpg)
+
+Try playing with the VGA RGB signal wires in the _VGA_Display_Example_ module to produce new images on the screen.
