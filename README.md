@@ -17,13 +17,15 @@ __(Note the -4 speed rating).__
 Add _VGA_Display_Driver.v_, _VGA_Display_Driver.ucf_, and _dcm_100.xaw_ to the project.
 
 * _VGA_Display_Driver.v_: Verilog code defining the VGA Display Driver module and an example module showing how to use the display driver.
-* _VGA_Display_Driver.ucf_: Constraints defining how the pins on the Spartan3a connect to the VGA port on the ElbertV2.
-* _dcm_100.xaw_: Wizard that generates a verilog module that gives us a 100Mhz clock signal from the 12Mhz clock available on the ElbertV2 board.
+* _VGA_Display_Driver.ucf_: Constraints defining how the pins on the Spartan3a connect to the VGA port on the ElbertV2 board.
+* _dcm_100.xaw_: Wizard provided by Xilinx for the Spartan3a that generates a verilog module at compile time that gives us a 100Mhz clock signal from the 12Mhz clock available on the ElbertV2 board.
 
 Select _VGA_Display_Example (VGA_Display_Driver.v)_ in the Design Heirarchy. In the processess list in the box below, right click "Generate Programming File" and go to Properties. Check "Create Binary Configuration File."
 ![Project Options](https://i.imgur.com/QG1aHdb.png)
 
-Click Apply and OK to close the options window. Click the "Implement Top Module" (green arrow) button in the toolbar to compile the project. Then, once that process is finished, double click on "Generate Programming File" to generate a bin we can use to program the Spartan3a on the ElbertV2 board.
+Click Apply and OK to close the options window. This only needs to be done once for each project.
+
+Click the "Implement Top Module" (green arrow) button in the toolbar to compile the project. Whenever you make changes to the project, you will need to recompile it. Once the compiling process is finished, double click on "Generate Programming File" to generate a binary dump we can use to program the Spartan3a on the ElbertV2 board.
 
 Plug in your ElbertV2 if it isn't already, and select the proper COM port in the ElbertV2 Configuration Tool. (Refer to the [ElbertV2 User Manual](https://numato.com/docs/elbert-v2-spartan-3a-fpga-development-board/)). Finally, select the generated bin file (_vga_display_example.bin_) and click Program. 
 ![Programming the board](https://i.imgur.com/V20n1Lu.png)
