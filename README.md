@@ -11,7 +11,8 @@ Some sort of VGA Display will be needed as well. The examples provided cover 640
 ## Using this project
 Create a new project, and configure the design properties as follows:
 ![Project Design Properties](https://i.imgur.com/rxClI8z.png)
-(Note the -4 speed rating).
+
+__(Note the -4 speed rating).__
 
 Add _VGA_Display_Driver.v_, _VGA_Display_Driver.ucf_, and _dcm_100.xaw_ to the project.
 
