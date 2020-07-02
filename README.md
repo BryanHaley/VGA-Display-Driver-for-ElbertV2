@@ -2,7 +2,7 @@
 This project is an example of driving a VGA display using the ElbertV2 (Spartan3a) FPGA Board. It also provides a usable generic VGA Display Driver in Verilog for displays of arbitrary resolutions.
 
 ## Hardware
-This project uses the [ElbertV2 Board from Numato Lab](https://numato.com/product/elbert-v2-spartan-3a-fpga-development-board). However, it can be easily adapted to any FPGA hooked up to a VGA display in a similar manner by adapting the constraints file and using or generating a 100Mhz clock. This projects relies on the Spartan3a-specific way of generating a 100Mhz clock signal from the 12Mhz input signal provided by the oscillator on the ElbertV2 board.
+While the VGA Display Driver in this project is generic to any FPGA and any resolution/color-depth/etc setup (it merely generates the correct timings and signal pulses based on its inputs), the example module is written specifically for the [ElbertV2 Board from Numato Lab](https://numato.com/product/elbert-v2-spartan-3a-fpga-development-board). However, the example module can easily be adapted to any FPGA hooked up to a VGA display in a similar manner (i.e. 8 signal lines for color information connected to the VGA display via a simple resistor ladder DAC). To do this, the constraints file must be changed to reflect the new pin configuration, and a 100Mhz clock source must be provided to replace the generated 100Mhz clock in the _VGA_Display_Example_ module (provided in the example by _dcm_100.xaw_).
 
 Some sort of VGA Display will be needed as well. The examples provided cover 640x480 and 800x600 (60Hz) displays, but in theory any VGA display should be usable if you override the default parameters with the [correct timings](https://www.epanorama.net/faq/vga2rgb/calc.html).
 
