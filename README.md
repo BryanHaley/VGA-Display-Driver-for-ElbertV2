@@ -1,5 +1,5 @@
 # VGA Display Driver Example for the ElbertV2 FPGA Board
-This project is an example of driving a VGA display using the ElbertV2 (Spartan3a) FPGA Board. It also provides a usable generic VGA Display Driver in Verilog for displays of arbitrary resolutions.
+This project is an example of driving a VGA display using the ElbertV2 (Spartan3a) FPGA Board. It also provides a usable generic VGA Display Driver in Verilog for driving arbitrary displays at arbitrary color depths with any capable FPGA.
 
 ## Hardware
 While the VGA Display Driver in this project is generic to any FPGA and any resolution/color-depth/etc setup (it merely generates the correct timings and signal pulses based on its inputs), the example module is written specifically for the [ElbertV2 Board from Numato Lab](https://numato.com/product/elbert-v2-spartan-3a-fpga-development-board). However, the example module can easily be adapted to any FPGA hooked up to a VGA display in a similar manner (i.e. 8 signal lines for color information connected to the VGA display via a simple resistor ladder DAC). To do this, the constraints file must be changed to reflect the new pin configuration, and a 100Mhz clock source must be provided to replace the generated 100Mhz clock in the _VGA_Display_Example_ module (provided in the example by _dcm_100.xaw_).
