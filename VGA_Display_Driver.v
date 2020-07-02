@@ -36,24 +36,24 @@ module VGA_Display_Example(i_clk, o_vga_rgb, o_vga_hsync, o_vga_vsync);
 	// GOTCHA: vga color signal lines need to be low when outside the active drawing area or we'll just get a black screen.
 	
 	// 640x480
-	assign o_vga_rgb[0] = active_draw ? (pix_x<80) : 0;
+	/*assign o_vga_rgb[0] = active_draw ? (pix_x<80) : 0;
 	assign o_vga_rgb[1] = active_draw ? (pix_x<160) : 0;
 	assign o_vga_rgb[2] = active_draw ? (pix_x<240) : 0;
 	assign o_vga_rgb[3] = active_draw ? (pix_x>=240 & pix_x<320) : 0;
 	assign o_vga_rgb[4] = active_draw ? (pix_x>=240 & pix_x<400) : 0;
 	assign o_vga_rgb[5] = active_draw ? (pix_x>=240 & pix_x<480) : 0;
 	assign o_vga_rgb[6] = active_draw ? (pix_x>=480 & pix_x<560) : 0;
-	assign o_vga_rgb[7] = active_draw ? (pix_x>=480 & pix_x<640) : 0;
+	assign o_vga_rgb[7] = active_draw ? (pix_x>=480 & pix_x<640) : 0;*/
 	
 	// 800x600
-	/*assign o_vga_rgb[0] = active_draw ? (pix_x<100) : 0;
+	assign o_vga_rgb[0] = active_draw ? (pix_x<100) : 0;
 	assign o_vga_rgb[1] = active_draw ? (pix_x<200) : 0;
 	assign o_vga_rgb[2] = active_draw ? (pix_x<300) : 0;
 	assign o_vga_rgb[3] = active_draw ? (pix_x>=300 & pix_x<400) : 0;
 	assign o_vga_rgb[4] = active_draw ? (pix_x>=300 & pix_x<500) : 0;
 	assign o_vga_rgb[5] = active_draw ? (pix_x>=300 & pix_x<600) : 0;
 	assign o_vga_rgb[6] = active_draw ? (pix_x>=600 & pix_x<700) : 0;
-	assign o_vga_rgb[7] = active_draw ? (pix_x>=600 & pix_x<800) : 0;*/
+	assign o_vga_rgb[7] = active_draw ? (pix_x>=600 & pix_x<800) : 0;
 	
 	// Instantiate display driver
 	VGA_Display_Driver display (
